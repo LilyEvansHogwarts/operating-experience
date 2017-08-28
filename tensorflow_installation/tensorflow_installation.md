@@ -11,7 +11,7 @@
 > bash Anaconda2-4.3.1-Linux-x86_64.sh
 
 * 测试Anaconda是否安装成功:
-![python](python.png)
+![python](./img/python.png)
 
 ## 2. 建立名叫tensorflow的计算环境
 
@@ -21,7 +21,7 @@
 > $ conda create -n tensorflow python=3.4
 
 具体运行结果如下:
-![conda create -n tensorflow python=2.7](conda_create.png)
+![conda create -n tensorflow python=2.7](./img/conda_create.png)
 
 ## 3. 激活以及关闭tensorflow的环境
 
@@ -31,7 +31,7 @@
 > $ source deactivate tensorflow
 
 具体运行结果如下:
-![source activate tensorflow](tensorflow_activate.png)
+![source activate tensorflow](./img/tensorflow_activate.png)
 
 ## 4. pip方式
 
@@ -49,7 +49,7 @@
 > (tensorflow) $ pip install --ignore-installed --upgrade $TF_BINARY_URL
 
 具体运行结果如下:
-![pip install --ignore-installed --upgrade $TF_BINARY_URL](pip_install_tensorflow.jpg)
+![pip install --ignore-installed --upgrade $TF_BINARY_URL](./img/pip_install_tensorflow.jpg)
 
 ## 5. 英伟达驱动、CUDA、cuDNN的安装
 
@@ -64,28 +64,28 @@
 
 ### b. 卸载原有的CUDA driver(否则在后续安装过程中会出现一下错误)
 > $ `sudo apt-get purge nvidia*`
-[without purge](without_purge.png)
+![without purge](./img/without_purge.png)
 
-### c. 先去英伟达官网上查看适合你的GPU驱动[nvidia driver](nvidia_driver.png)
+### c. 先去英伟达官网上查看适合你的GPU驱动![nvidia driver](./img/nvidia_driver.png)
 > $ sudo add-apt-repository ppa:graphics-drivers/ppa
 > $ sudo apt-get update
 > $ sudo apt-get install nvidia-375(375是你查到的版本号)
 	一般而言可以通过在命令行输入:
 	> $ lspci -vnn | grep VGA -A 12 
-[nvidia](VGA_compatible_controller.png)
+![nvidia](./img/VGA_compatible_controller.png)
 > $ sudo apt-get install mesa-common-dev
 > $ sudo apt-get install freeglut3-dev
 执行完上述后，重启
 > $ reboot
 重启后输入
 > $ nvidia-smi
-如果出现了你的GPU列表，则说明驱动安装成功了。[nvidia-smi](nvidia-smi.png)
+如果出现了你的GPU列表，则说明驱动安装成功了。![nvidia-smi](./img/nvidia-smi.png)
 另外也可以通过，或者输入
 > $ nvidia-settings
 出现
 
 ### d. 接着要安装cuda
-[download cuda](download_cuda.png)
+![download cuda](./img/download_cuda.png)
 > $ sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amb64.deb
 > $ sudo apt-get update
 > $ sudo apt-get install cuda
@@ -120,7 +120,7 @@ sudo ldconfig
 > $ cd /usr/local/cuda-8.0/samples/1_Utilities/deviceQuery
 > $ sudo make
 > $ sudo ./deviceQuery
-[with purge](with_purge.png)
+![with purge](./img/with_purge.png)
 
 ### 安装cuDNN
 下载 [cuDNN](https://developer.nvidia.com/cudnn)注意，要下载5.0版本
